@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: Basket Option Pricer
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Blair
+    family-names: Azzopardi
+    email: blairuk@gmail.com
+repository-code: 'https://github.com/bsdz/basket_option_pricer'
+abstract: >-
+  Price and calculate greeks for basket options.
+date-released: 2024-08-16

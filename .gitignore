@@ -1,0 +1,4 @@
+build
+.venv
+.ipynb_checkpoints/
+CMakeUserPresets.json

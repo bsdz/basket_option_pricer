@@ -1,0 +1,16 @@
+[requires]
+eigen/3.4.0
+ceres-solver/2.2.0
+glog/0.6.0
+gtest/1.15.0
+pybind11/2.13.1
+
+[options]
+ceres-solver/*:use_glog=True
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+#[layout]
+#cmake_layout

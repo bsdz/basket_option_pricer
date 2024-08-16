@@ -1,0 +1,57 @@
+#pragma once
+
+#include <Eigen/Dense>
+
+double fn_m1(Eigen::Ref<Eigen::VectorXd> F0, Eigen::Ref<Eigen::VectorXd> a, int N);
+double fn_m2(Eigen::Ref<Eigen::VectorXd> F0, Eigen::Ref<Eigen::VectorXd> a, int N, double T, Eigen::Ref<Eigen::VectorXd> sigma, Eigen::Ref<Eigen::MatrixXd> rho);
+double fn_m3(Eigen::Ref<Eigen::VectorXd> F0, Eigen::Ref<Eigen::VectorXd> a, int N, double T, Eigen::Ref<Eigen::VectorXd> sigma, Eigen::Ref<Eigen::MatrixXd> rho);
+double fn_V_ln(double m1, double m2);
+double fn_d1_ln(double F, double K, double T, double sigma);
+double fn_d2_ln(double F, double K, double T, double sigma);
+double fn_P_ln(double F, double K, double T, double r, double d1, double d2);
+double fn_V_nln(double m1, double m2);
+double fn_d1_nln(double F, double K, double T, double sigma);
+double fn_d2_nln(double F, double K, double T, double sigma);
+double fn_P_nln(double F, double K, double T, double r, double d1, double d2);
+double fn_V_sln(double m1, double m2, double tau);
+double fn_d1_sln(double F, double K, double T, double tau, double sigma);
+double fn_d2_sln(double F, double K, double T, double tau, double sigma);
+double fn_P_sln(double F, double K, double T, double tau, double r, double d1, double d2);
+double fn_V_nsln(double m1, double m2, double tau);
+double fn_d1_nsln(double F, double K, double T, double tau, double sigma);
+double fn_d2_nsln(double F, double K, double T, double tau, double sigma);
+double fn_P_nsln(double F, double K, double T, double tau, double r, double d1, double d2);
+double fn_mu(double m1, double m2, double tau, double kappa);
+double fn_sigma(double m1, double m2, double tau, double kappa);
+Eigen::MatrixXd fn_jacob_comp(Eigen::Ref<Eigen::VectorXd> F0, Eigen::Ref<Eigen::VectorXd> a, int N, double T, Eigen::Ref<Eigen::VectorXd> sigma, Eigen::Ref<Eigen::MatrixXd> rho, int l);
+Eigen::MatrixXd fn_jacob_top(double tau, double kappa, double mu, double sigma);
+double fn_rho_ln(double T, double c);
+double fn_theta_ln(double K, double T, double r, double d2, double V_T, double c);
+double fn_delta_ln(double K, double T, double r, double d1, double d2, double M1_F, double V_F);
+double fn_vega_ln(double K, double T, double r, double d2, double V_sigma);
+double fn_V_T_ln(double M2, double V, double M2_T);
+double fn_V_F_ln(double M1, double M2, double V, double M1_F, double M2_F);
+double fn_V_s_ln(double M2, double V, double M2_sigma);
+double fn_rho_nln(double T, double c);
+double fn_theta_nln(double K, double T, double r, double d2, double V_T, double c);
+double fn_delta_nln(double K, double T, double r, double d1, double d2, double M1_F, double V_F);
+double fn_vega_nln(double K, double T, double r, double d2, double V_sigma);
+double fn_V_T_nln(double M2, double V, double M2_T);
+double fn_V_F_nln(double M1, double M2, double V, double M1_F, double M2_F);
+double fn_V_s_nln(double M2, double V, double M2_sigma);
+double fn_rho_sln(double T, double c);
+double fn_theta_sln(double K, double T, double tau, double r, double d1, double d2, double tau_T, double V_T, double c);
+double fn_delta_sln(double K, double T, double tau, double r, double d1, double d2, double tau_F, double M1_F, double V_F);
+double fn_vega_sln(double K, double T, double tau, double r, double d1, double d2, double tau_sigma, double V_sigma);
+double fn_V_T_sln(double M1, double M2, double tau, double V, double tau_T, double M2_T);
+double fn_V_F_sln(double M1, double M2, double tau, double V, double tau_F, double M1_F, double M2_F);
+double fn_V_s_sln(double M1, double M2, double tau, double V, double tau_sigma, double M2_sigma);
+double fn_rho_nsln(double T, double c);
+double fn_theta_nsln(double K, double T, double tau, double r, double d1, double d2, double tau_T, double V_T, double c);
+double fn_delta_nsln(double K, double T, double tau, double r, double d1, double d2, double tau_F, double M1_F, double V_F);
+double fn_vega_nsln(double K, double T, double tau, double r, double d1, double d2, double tau_sigma, double V_sigma);
+double fn_V_T_nsln(double M1, double M2, double tau, double V, double tau_T, double M2_T);
+double fn_V_F_nsln(double M1, double M2, double tau, double V, double tau_F, double M1_F, double M2_F);
+double fn_V_s_nsln(double M1, double M2, double tau, double V, double tau_sigma, double M2_sigma);
+Eigen::MatrixXd fn_tau_solver(double m1, double m2, double m3, double kappa, Eigen::Ref<Eigen::VectorXd> x);
+Eigen::MatrixXd fn_tau_solver_prime(double kappa, Eigen::Ref<Eigen::VectorXd> x);
